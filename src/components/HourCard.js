@@ -10,6 +10,7 @@ const HourCard = ({ date, icon, temp }) => {
         }`}
       </p>
       <img
+        className="w-20 h-20"
         src={`https://openweathermap.org/img/wn/${icon}@4x.png`}
         alt="weather icon"
       />

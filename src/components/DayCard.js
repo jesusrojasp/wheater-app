@@ -15,6 +15,7 @@ const DayCard = ({ date, icon, temp_min, temp_max, onClick }) => {
     >
       <p className="font-semibold text-white">{days[date.getDay()]}</p>
       <img
+        className="w-24 h-24"
         src={`https://openweathermap.org/img/wn/${icon}@4x.png`}
         alt="weather icon"
       />
