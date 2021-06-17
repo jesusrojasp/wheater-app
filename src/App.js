@@ -6,9 +6,7 @@ import Home from "./components/Home";
 const App = () => {
   const [selectedDay, setSelectedDay] = useState(0);
 
-  useEffect(() => {
-    console.log(selectedDay);
-  }, [selectedDay]);
+  useEffect(() => {}, [selectedDay]);
 
   return (
     <div className="bg-gradient-to-b from-purple-200 to-purple-400 h-screen w-full">

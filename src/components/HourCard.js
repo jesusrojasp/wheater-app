@@ -1,5 +1,4 @@
 const HourCard = ({ date, icon, temp }) => {
-  console.log(date);
   return (
     <div className="w-24 m-4 backdrop-filter blur-md bg-white  bg-opacity-30 h-auto shadow-lg rounded-xl p-2 flex flex-col justify-center items-center transform transition-all hover:shadow-xl hover:scale-105">
       <p className="font-semibold text-white">

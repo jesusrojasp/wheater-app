@@ -9,16 +9,17 @@ const Day = ({ selectedDay }) => {
   const [hourlyData, setHourlyData] = useState([]);
 
   useEffect(() => {
+    // OpenWeatherMap free API only offers 3-hour intervals if more than 2 days of data are required
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?lat=9.93&lon=-84.08&units=metric&exclude=minutely,daily&appid=${api.key}`
     )
       .then((res) => res.json())
       .then((result) => {
+        // After the data is fetch, filter it to exactly 8 3-hour intervals and extract only the necessary fields
         setDay(new Date(result.list[1 * selectedDay * 8].dt * 1000).getDay());
         let days = result.list.filter(
           (item, i) => i >= 0 + 8 * selectedDay && i <= 8 * selectedDay + 7
         );
-        console.log(days);
         let _hourlyData = [];
         for (let day of days) {
           _hourlyData.push({

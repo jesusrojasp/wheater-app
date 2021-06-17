@@ -11,10 +11,10 @@ const Home = ({ setSelectedDay }) => {
     )
       .then((res) => res.json())
       .then((result) => {
+        // After the data is fetch, filter it to exactly 5 days and extract only the necessary fields
         let days = result.daily.filter((item, i) => i < 5);
         let _cards = [];
         for (let day of days) {
-          console.log(day);
           _cards.push({
             date: new Date(day.dt * 1000),
             icon: day.weather[0].icon,
